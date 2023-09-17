@@ -1,0 +1,59 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar-logo-container {
+    display: flex;
+    cursor: pointer;
+}
+
+.navbar-logo-bulgak {
+    background-color: rgb(192, 3, 3);
+    color: white;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    letter-spacing: 3px;
+    padding: 15px 20px;
+}
+
+.navbar-logo-shop {
+    background-color: black;
+    color: white;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    letter-spacing: 3px;
+    padding: 15px 20px;
+}
+
+.navbar-right-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-right: 50px;
+    cursor: pointer;
+}
+
+.navbar-basket-icon {
+    width: 25px;
+}
+
+.navbar-basket-count {
+    position: absolute;
+    right: -24px;
+    top: 7px;
+    background-color: rgb(192, 3, 3);
+    color: white;
+    width: 25px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

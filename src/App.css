@@ -1,0 +1,30 @@
+.paginate {
+  display: flex;
+}
+
+.main-container {
+  max-width: 1750px;
+  margin: 0 auto;
+}
+
+.category-products-container {
+  display: flex;
+  margin-bottom: 100px;
+}
+
+.cart-header {
+  margin-top: 30px;
+}
+
+.cart-total-amount {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 20px;
+}
+
+.cart-total-amount span {
+  color: rgb(192, 3, 3);
+  font-weight: bold;
+  margin-left: 10px;
+}

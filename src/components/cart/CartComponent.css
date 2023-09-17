@@ -1,0 +1,27 @@
+.cart-item {
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 50px;
+    margin: 20px 0;
+}
+
+.cart-delete-button {
+    background-color: rgb(192, 3, 3);
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.cart-price {
+    font-size: 19px;
+    margin-right: 7px;
+}
+
+.cart-amount {
+    margin-left: 7px;
+    background-color: #e7e7e7;
+    padding: 3px 7px;
+    border-radius: 3px;
+}
