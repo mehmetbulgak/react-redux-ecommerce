@@ -5,10 +5,11 @@ import Loading from '../loading/Loading';
 import Product from './Product';
 import './Products.css';
 
-const Products = ({ category, sort, priceRange }) => {
+const Products = ({ category, priceRange, rating }) => {
   const dispatch = useDispatch();
   const { products, productsStatus } = useSelector((state) => state.products);
-  const [filteredProducts, setFilteredProducts] = useState([]);
+  const [filteredProductsByPrice, setFilteredProductsByPrice] = useState([]);
+  const [filteredProductsByRating, setFilteredProductsByRating] = useState([]);
 
   useEffect(() => {
     if (category) {
@@ -19,35 +20,40 @@ const Products = ({ category, sort, priceRange }) => {
   }, [dispatch, category]);
 
   useEffect(() => {
-    if (priceRange) {
+    let productsFilteredByPrice = [...products];
+
+    if (priceRange === "removePrice") {
+      setFilteredProductsByPrice(null);
+    }
+    else if (priceRange) {
       const [minPrice, maxPrice] = priceRange.split('-').map(Number);
 
-      const filtered = products.filter((product) => {
+      productsFilteredByPrice = products.filter((product) => {
         const productPrice = Number(product.price);
-
         return productPrice >= minPrice && productPrice <= maxPrice;
       });
-
-      setFilteredProducts(filtered);
-    } else {
-      setFilteredProducts(products);
     }
-  }, [priceRange, products]);
+
+    setFilteredProductsByPrice(productsFilteredByPrice);
+  }, [products, priceRange]);
 
   useEffect(() => {
-    if (priceRange && (sort === 'inc' || sort === 'dec')) {
-      const sorted = [...filteredProducts].sort(
-        (a, b) => Number(a.price) - Number(b.price)
-      );
+    let productsFilteredByRating = [...products];
 
-      if (sort === 'dec') {
-        sorted.reverse();
-      }
-
-      setFilteredProducts(sorted);
+    if (rating === "removeRating") {
+      setFilteredProductsByRating(null)
     }
-  }, [priceRange, sort, filteredProducts]);
+    else if (rating) {
+      productsFilteredByRating = productsFilteredByRating.filter((product) => {
+        return product.rating.rate >= rating;
+      });
+    }
 
+    setFilteredProductsByRating(productsFilteredByRating);
+  }, [products, rating]);
+
+  const renderedProducts = filteredProductsByPrice.filter(product => filteredProductsByRating.includes(product));
+  
   return (
     <div className='products-right-container'>
       {productsStatus === 'LOADING' ? (
@@ -55,10 +61,10 @@ const Products = ({ category, sort, priceRange }) => {
       ) : (
         <>
           <div className='products-container'>
-            {filteredProducts.length === 0 ? (
-              <p>Bu fiyat aralığında bir ürün yok.</p>
+            {renderedProducts.length === 0 ? (
+              <p>Belirtilen fiyat aralığında veya puan aralığında bir ürün yok.</p>
             ) : (
-              filteredProducts.map((product, index) => (
+              renderedProducts.map((product, index) => (
                 <Product key={index} product={product} />
               ))
             )}

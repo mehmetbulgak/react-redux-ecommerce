@@ -18,6 +18,7 @@ const Category = ({setCategory}) => {
             <h3 className='categories-header'>Categories</h3>
 
             <ul className='categories-list'>
+                <li className='categories-list-item' onClick={() => setCategory('')}>all</li>
                 {categories?.map((category, i) => (
                     <li className='categories-list-item' onClick={() => setCategory(category)} key={i}>{category}</li>
                 ))}

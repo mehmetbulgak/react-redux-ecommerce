@@ -6,17 +6,17 @@ import Sorting from "../components/home/Sorting";
 
 function Home() {
 
-    const [sort, setSort] = useState('');
+    const [rating, setRating] = useState('');
     const [priceRange, setPriceRange] = useState('');
     const [category, setCategory] = useState('');
 
     return (
         <div>
             <SliderComponent />
-            <Sorting setSort={setSort} setPriceRange={setPriceRange} />
+            <Sorting setRating={setRating} setPriceRange={setPriceRange} />
             <div className="category-products-container">
                 <Category setCategory={setCategory} />
-                <Products category={category} sort={sort} priceRange={priceRange} />
+                <Products category={category} rating={rating} priceRange={priceRange} />
             </div>
         </div>
     );

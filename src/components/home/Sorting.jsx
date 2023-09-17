@@ -1,26 +1,40 @@
 import React from 'react';
 import "./Sorting.css";
 
-const Sorting = ({ setSort, setPriceRange }) => {
-  const handleSortIncToDesc = (e) => {
-    const selectedValue = e.target.value;
-    setSort(selectedValue);
-  };
+const Sorting = ({ setPriceRange, setRating }) => {
 
   const handleSortPrice = (e) => {
     const selectedValue = e.target.value;
     setPriceRange(selectedValue);
   };
 
+  const handleSortRating = (e) => {
+    const selectedValue = e.target.value;
+    setRating(selectedValue);
+  };
+
   return (
     <div className='sorting-container'>
 
-
-      <div>LOL:</div>
-      <select onChange={handleSortPrice} defaultValue="">
+    <div className='sorting-header'>Rating Range:</div>
+      <select className='sorting-rating' onChange={handleSortRating} defaultValue="">
         <option disabled value="">
-          lol
+          Rating Range
         </option>
+        <option value="removeRating">Remove The Rating Filter</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+      </select>
+
+      <div className='sorting-header'>Price Range:</div>
+      <select className='sorting-price' onChange={handleSortPrice} defaultValue="">
+        <option disabled value="">
+          Price Range
+        </option>
+        <option value="removePrice">Remove The Price Filter</option>
         <option value="0-50">0-50</option>
         <option value="50-100">50-100</option>
         <option value="100-200">100-200</option>
@@ -28,15 +42,6 @@ const Sorting = ({ setSort, setPriceRange }) => {
         <option value="500-1000">500-1000</option>
       </select>
 
-
-      <div className='sorting-header'>Sort By Price:</div>
-      <select onChange={handleSortIncToDesc} defaultValue="">
-        <option disabled value="">
-          Sort
-        </option>
-        <option value="inc">Increasing Price</option>
-        <option value="dec">Decreasing Price</option>
-      </select>
     </div>
   );
 };
