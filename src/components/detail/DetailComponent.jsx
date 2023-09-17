@@ -2,11 +2,14 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux';
 import { addToCart, getCartTotal } from '../../redux/cartSlice';
 import "./DetailComponent.css"
+import Popup from '../home/Popup';
 
 const DetailComponent = ({ productDetail }) => {
 
     const dispatch = useDispatch()
     const [quantity, setQuantity] = useState(1)
+    const [showPopup, setShowPopup] = useState(false); // Popup'ın görünürlüğünü kontrol etmek için state
+    const [addedProduct, setAddedProduct] = useState(null); // Eklenen ürün bilgilerini saklamak için state
 
     const decrementQuantity = () => {
         if (quantity > 1) setQuantity(quantity - 1)
@@ -19,9 +22,12 @@ const DetailComponent = ({ productDetail }) => {
     const addBasket = () => {
         dispatch(addToCart({ id: productDetail?.id, title: productDetail?.title, image: productDetail?.image, price: productDetail?.price, quantity: quantity }))
         dispatch(getCartTotal());
+
+        setAddedProduct(productDetail);
+        setShowPopup(true);
     }
 
-    console.log(productDetail)
+    console.log(addedProduct)
 
     return (
         <div className='product-detail-container'>
@@ -48,6 +54,8 @@ const DetailComponent = ({ productDetail }) => {
                     <div className='product-detail-add-to-basket' onClick={addBasket}>ADD TO BASKET</div>
                 </div>
             </div>
+
+             <Popup showPopup={showPopup} setShowPopup={setShowPopup} addedProduct={addedProduct} quantity={quantity}/>
         </div>
     )
 }
