@@ -22,11 +22,11 @@ const Sorting = ({ setPriceRange, setRating }) => {
           Rating Range
         </option>
         <option value="removeRating">Remove The Rating Filter</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+        <option value="1">1 & Up</option>
+        <option value="2">2 & Up</option>
+        <option value="3">3 & Up</option>
+        <option value="4">4 & Up</option>
+        <option value="5">5 & Up</option>
       </select>
 
       <div className='sorting-header'>Price Range:</div>
@@ -35,11 +35,11 @@ const Sorting = ({ setPriceRange, setRating }) => {
           Price Range
         </option>
         <option value="removePrice">Remove The Price Filter</option>
-        <option value="0-50">0-50</option>
-        <option value="50-100">50-100</option>
-        <option value="100-200">100-200</option>
-        <option value="200-500">200-500</option>
-        <option value="500-1000">500-1000</option>
+        <option value="0-50">0-50$</option>
+        <option value="50-100">50-100$</option>
+        <option value="100-200">100-200$</option>
+        <option value="200-500">200-500$</option>
+        <option value="500-1000">500-1000$</option>
       </select>
 
     </div>

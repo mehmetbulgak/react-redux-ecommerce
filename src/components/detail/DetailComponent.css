@@ -96,3 +96,20 @@
     padding: 15px 0;
     margin-top: 10px;
 }
+
+@media screen and (max-width: 1750px) {
+    .product-detail-container {
+        margin: 100px 35px 0px 35px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .product-detail-container {
+        flex-direction: column;
+        margin-top: 50px;
+    }
+
+    .product-detail-content{
+        margin: 25px 35px;
+    }
+}

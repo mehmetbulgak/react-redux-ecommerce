@@ -21,7 +21,14 @@
     padding: 10px;
 }
 
-.categories-list-item:hover{
+.categories-list-item:hover {
     background-color: rgb(226, 226, 226);
     transition: 0.5s ease;
+}
+
+@media screen and (max-width: 1000px) {
+    .categories-list {
+        width: 100%;
+        margin-bottom: 25px;
+    }
 }

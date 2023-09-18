@@ -28,3 +28,23 @@
   font-weight: bold;
   margin-left: 10px;
 }
+
+@media screen and (max-width: 1750px) {
+  .cart-container {
+    margin: 0 35px 50px 35px;
+  }
+  
+  .category-products-container {
+    margin: 0px 35px 100px 35px;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .cart-container {
+    margin: 0 35px 50px 35px;
+  }
+
+  .category-products-container {
+    flex-direction: column;
+  }
+}

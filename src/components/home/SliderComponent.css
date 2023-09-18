@@ -4,10 +4,11 @@
 
 .slider-item-container {
     height: 100%;
-    background-image: url(../../assets/lol.jpg);
+    background-image: url(../../assets/new-shoes.jpg);
     background-size: cover;
     background-position-y: -140px;
     position: relative;
+    background-repeat: no-repeat;
 }
 
 .swiper-pagination-bullet {
@@ -40,4 +41,24 @@
     width: 275px;
     height: 80px;
     padding: 10px 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .swiper-main-container {
+        height: 350px;
+    }
+
+    .slider-item-container {
+        background-position-y: initial;
+        background-position: center;
+    }
+
+    .slider-header{
+        bottom: 65px;
+        left: 0;
+    }
+
+    .slider-header-back{
+        display: none;
+    }
 }

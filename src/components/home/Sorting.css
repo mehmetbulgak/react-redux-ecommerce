@@ -9,6 +9,24 @@
     margin-right: 10px;
 }
 
-.sorting-rating{
+.sorting-rating {
     margin-right: 40px;
+}
+
+@media screen and (max-width: 1750px) {
+    .sorting-container {
+        margin: 35px 35px 25px 35px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .sorting-container {
+        margin: 35px 35px 25px 35px;
+        flex-direction: column;
+    }
+
+    .sorting-rating {
+        margin-right: initial;
+        margin-bottom: 15px;
+    }
 }

@@ -15,7 +15,7 @@ const Cart = () => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className='cart-container'>
             <h1 className='cart-header'>Basket</h1>
 
             {

@@ -25,3 +25,13 @@
     padding: 3px 7px;
     border-radius: 3px;
 }
+
+@media screen and (max-width: 1000px) {
+    .cart-item {
+        flex-direction: column;
+    }
+
+    .cart-delete-button{
+        margin-top: 25px;
+    }
+}

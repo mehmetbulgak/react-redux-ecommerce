@@ -57,3 +57,9 @@ nav {
     align-items: center;
     justify-content: center;
 }
+
+@media screen and (max-width: 1750px) {
+    .navbar-right-container {
+        margin-right: 35px;
+    }
+}
