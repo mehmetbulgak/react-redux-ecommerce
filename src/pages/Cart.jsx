@@ -6,9 +6,7 @@ import CartComponent from '../components/cart/CartComponent'
 const Cart = () => {
 
     const dispatch = useDispatch();
-    const { carts, totalAmount, itemCount } = useSelector(state => state.carts);
-
-    console.log(carts, totalAmount, itemCount)
+    const { carts, totalAmount } = useSelector(state => state.carts);
 
     useEffect(() => {
         dispatch(getCartTotal())

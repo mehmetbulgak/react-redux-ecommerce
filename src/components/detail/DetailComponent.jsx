@@ -27,8 +27,6 @@ const DetailComponent = ({ productDetail }) => {
         setShowPopup(true);
     }
 
-    console.log(addedProduct)
-
     return (
         <div className='product-detail-container'>
             <div className='product-detail-image-container'>
