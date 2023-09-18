@@ -62,7 +62,7 @@ const Products = ({ category, priceRange, rating }) => {
         <>
           <div className='products-container'>
             {renderedProducts.length === 0 ? (
-              <p>Belirtilen fiyat aralığında veya puan aralığında bir ürün yok.</p>
+              <p>There is no product in the specified price range or rating range.</p>
             ) : (
               renderedProducts.map((product, index) => (
                 <Product key={index} product={product} />
